@@ -14,6 +14,7 @@ setup() {
 }
 
 @test "fails when LEFTHOOK_NIX_FLAKE_EVAL_ATTR is empty" {
+    # shellcheck disable=SC2030
     export LEFTHOOK_NIX_FLAKE_EVAL_ATTR=""
     run lefthook-nix-flake-eval
     assert_failure
@@ -25,6 +26,7 @@ setup() {
     if [ "$status" -ne 0 ]; then
         skip "nix eval unavailable in this environment"
     fi
+    # shellcheck disable=SC2031
     export LEFTHOOK_NIX_FLAKE_EVAL_ATTR=".#packages"
     run lefthook-nix-flake-eval
     assert_success
