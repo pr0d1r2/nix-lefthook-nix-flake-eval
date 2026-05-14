@@ -76,6 +76,7 @@ pre-commit:
       glob: "*.nix"
       env:
         LEFTHOOK_NIX_FLAKE_EVAL_ATTR: ".#packages"
+      # yamllint disable-line rule:line-length
       run: timeout ${LEFTHOOK_NIX_FLAKE_EVAL_TIMEOUT:-60} lefthook-nix-flake-eval
     nix-flake-check:
       glob: "*.nix"
