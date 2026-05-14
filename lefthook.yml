@@ -88,10 +88,6 @@ remotes:
     ref: main
     configs:
       - lefthook-remote.yml
-  - git_url: https://github.com/pr0d1r2/nix-lefthook-no-shell-functions
-    ref: main
-    configs:
-      - lefthook-remote.yml
   - git_url: https://github.com/pr0d1r2/nix-lefthook-tdd-order-bats
     ref: main
     configs:
@@ -100,6 +96,10 @@ remotes:
 pre-commit:
   parallel: true
   commands:
+    tdd-order-bats:
+      env:
+        LEFTHOOK_TDD_SPEC_DIR: tests/unit
+        LEFTHOOK_TDD_SRC_STRIP: ""
     nix-flake-eval:
       glob: "*.nix"
       env:
