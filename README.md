@@ -30,7 +30,7 @@ pre-commit:
 ## Configuration
 
 | Variable | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `LEFTHOOK_NIX_FLAKE_EVAL_ATTR` | (required) | Flake attribute to eval |
 | `LEFTHOOK_NIX_FLAKE_EVAL_TIMEOUT` | `60` | Timeout in seconds |
 
