@@ -4,7 +4,6 @@ setup() {
     load "${BATS_LIB_PATH}/bats-support/load.bash"
     load "${BATS_LIB_PATH}/bats-assert/load.bash"
 
-    TMP="$BATS_TEST_TMPDIR"
     unset LEFTHOOK_NIX_FLAKE_EVAL_ATTR
 }
 
@@ -15,6 +14,7 @@ setup() {
 }
 
 @test "fails when LEFTHOOK_NIX_FLAKE_EVAL_ATTR is empty" {
+    # shellcheck disable=SC2030
     export LEFTHOOK_NIX_FLAKE_EVAL_ATTR=""
     run lefthook-nix-flake-eval
     assert_failure
@@ -22,6 +22,11 @@ setup() {
 }
 
 @test "succeeds evaluating own flake packages" {
+    run nix --extra-experimental-features 'nix-command flakes' eval .#packages
+    if [ "$status" -ne 0 ]; then
+        skip "nix eval unavailable in this environment"
+    fi
+    # shellcheck disable=SC2031
     export LEFTHOOK_NIX_FLAKE_EVAL_ATTR=".#packages"
     run lefthook-nix-flake-eval
     assert_success

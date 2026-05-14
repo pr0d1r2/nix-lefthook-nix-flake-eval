@@ -2,7 +2,8 @@
 
 Lefthook-compatible nix flake eval checker, packaged as a Nix flake.
 
-Evaluates a configurable flake output attribute to catch nix evaluation errors on pre-commit.
+Evaluates a configurable flake output attribute to catch nix
+evaluation errors on pre-commit.
 
 ## Usage
 
@@ -29,8 +30,8 @@ pre-commit:
 ## Configuration
 
 | Variable | Default | Description |
-|----------|---------|-------------|
-| `LEFTHOOK_NIX_FLAKE_EVAL_ATTR` | (required) | Flake attribute to evaluate |
+| --- | --- | --- |
+| `LEFTHOOK_NIX_FLAKE_EVAL_ATTR` | (required) | Flake attribute to eval |
 | `LEFTHOOK_NIX_FLAKE_EVAL_TIMEOUT` | `60` | Timeout in seconds |
 
 ## Nix flake

@@ -3,4 +3,5 @@ pre-commit:
   commands:
     nix-flake-eval:
       glob: "*.nix"
+      # yamllint disable-line rule:line-length
       run: timeout ${LEFTHOOK_NIX_FLAKE_EVAL_TIMEOUT:-60} lefthook-nix-flake-eval

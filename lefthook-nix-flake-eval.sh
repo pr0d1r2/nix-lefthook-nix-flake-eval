@@ -3,7 +3,7 @@
 # Evaluates a configurable flake output attribute to catch nix errors early.
 # Usage: lefthook-nix-flake-eval
 # Environment:
-#   LEFTHOOK_NIX_FLAKE_EVAL_ATTR — attribute to evaluate (required)
+#   LEFTHOOK_NIX_FLAKE_EVAL_ATTR -- attribute to evaluate (required)
 #     e.g. ".#darwinConfigurations.myhost.system"
 # NOTE: sourced by writeShellApplication - no shebang or set needed.
 
@@ -15,4 +15,4 @@ if [ -z "$attr" ]; then
     exit 1
 fi
 
-nix --extra-experimental-features 'nix-command flakes' eval "$attr" > /dev/null 2>&1
+nix --extra-experimental-features 'nix-command flakes' eval "$attr" >/dev/null 2>&1
