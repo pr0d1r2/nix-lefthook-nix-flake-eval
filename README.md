@@ -1,5 +1,7 @@
 # nix-lefthook-nix-flake-eval
 
+[![CI](https://github.com/pr0d1r2/nix-lefthook-nix-flake-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/pr0d1r2/nix-lefthook-nix-flake-eval/actions/workflows/ci.yml)
+
 Lefthook-compatible nix flake eval checker, packaged as a Nix flake.
 
 Evaluates a configurable flake output attribute to catch nix
